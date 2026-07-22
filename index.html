@@ -1,24 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 
 <head>
-<title>我的插画收藏</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Illustration Gallery</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 
 <body>
 
-<h1>我的插画相册</h1>
 
-<div class="gallery">
+<!-- 入口界面 -->
 
-<img src="images/cat.jpg">
-<img src="images/forest.jpg">
-<img src="images/robot.jpg">
+<section id="welcome" class="screen">
+
+    <div class="card">
+
+        <h1>Illustration</h1>
+
+        <p>
+        请确认你的年龄是否已满18岁
+        </p>
+
+
+        <div class="buttons">
+
+            <button id="yes">
+                是
+            </button>
+
+            <button id="no">
+                否
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- 加载界面 -->
+
+<section id="loading" class="screen hidden">
+
+
+    <div class="loading-box">
+
+        <h2>
+        正在为你寻找与你年龄相适配的内容……
+        </h2>
+
+
+        <div class="loader"></div>
+
+
+        <p id="loadingText">
+        正在搜索插画资源...
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- 禁止访问 -->
+
+<section id="blocked" class="screen hidden">
+
+
+<div class="card">
+
+<h1>
+访问限制
+</h1>
+
+
+<p>
+该网页已禁止你访问
+</p>
+
+
+<button onclick="location.reload()">
+返回
+</button>
+
 
 </div>
 
+
+</section>
+
+
+
+<!-- 图片展示 -->
+
+<main id="gallery" class="hidden">
+
+
+<h1>
+Illustration Gallery
+</h1>
+
+
+<div class="grid">
+
+
+<img src="images/1.jpg">
+<img src="images/2.jpg">
+<img src="images/3.jpg">
+<img src="images/4.jpg">
+
+<img src="images/5.jpg">
+<img src="images/6.jpg">
+<img src="images/7.jpg">
+<img src="images/8.jpg">
+
+<img src="images/9.jpg">
+<img src="images/10.jpg">
+<img src="images/11.jpg">
+<img src="images/12.jpg">
+
+<img src="images/13.jpg">
+<img src="images/14.jpg">
+<img src="images/15.jpg">
+<img src="images/16.jpg">
+
+<img src="images/17.jpg">
+<img src="images/18.jpg">
+<img src="images/19.jpg">
+<img src="images/20.jpg">
+
+
+</div>
+
+
+</main>
+
+
+
+<!-- 图片放大 -->
+
+<div id="viewer">
+
+<img id="bigImage">
+
+</div>
+
+
+
+<script src="script.js"></script>
 
 </body>
 
