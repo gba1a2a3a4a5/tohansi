@@ -1,48 +1,59 @@
-const yes =
-document.getElementById("yes");
+const agePage =
+document.getElementById("agePage");
 
 
-const no =
-document.getElementById("no");
+const blockedPage =
+document.getElementById("blockedPage");
 
 
-const welcome =
-document.getElementById("welcome");
+const loadingPage =
+document.getElementById("loadingPage");
 
 
-const loading =
-document.getElementById("loading");
-
-
-const blocked =
-document.getElementById("blocked");
-
-
-const gallery =
-document.getElementById("gallery");
+const galleryPage =
+document.getElementById("galleryPage");
 
 
 
-yes.onclick=function(){
+const adult =
+document.getElementById("adult");
 
 
-welcome.classList.add("hidden");
+const child =
+document.getElementById("child");
 
 
-blocked.classList.remove("hidden");
+
+
+
+// 点击 是
+
+adult.onclick=function(){
+
+
+agePage.classList.add("hide");
+
+
+blockedPage.classList.remove("hide");
 
 
 }
 
 
 
-no.onclick=function(){
 
 
-welcome.classList.add("hidden");
 
 
-loading.classList.remove("hidden");
+// 点击 否
+
+child.onclick=function(){
+
+
+agePage.classList.add("hide");
+
+
+loadingPage.classList.remove("hide");
 
 
 
@@ -50,13 +61,13 @@ let text =
 document.getElementById("loadingText");
 
 
-let words=[
+let list=[
 
-"正在搜索插画资源...",
+"正在搜索插画资源……",
 
-"正在分析风格...",
+"正在整理内容……",
 
-"正在整理作品集...",
+"正在生成推荐……",
 
 "加载完成"
 
@@ -66,16 +77,18 @@ let words=[
 let i=0;
 
 
+
 let timer=setInterval(()=>{
 
 
-text.innerHTML=words[i];
+text.innerHTML=list[i];
 
 
 i++;
 
 
-if(i>=words.length){
+
+if(i>=list.length){
 
 
 clearInterval(timer);
@@ -85,13 +98,14 @@ clearInterval(timer);
 setTimeout(()=>{
 
 
-loading.classList.add("hidden");
+loadingPage.classList.add("hide");
 
 
-gallery.classList.remove("hidden");
+galleryPage.classList.remove("hide");
 
 
-},800);
+},700);
+
 
 
 }
@@ -99,51 +113,6 @@ gallery.classList.remove("hidden");
 
 },900);
 
-
-
-}
-
-
-
-
-// 图片查看
-
-const imgs =
-document.querySelectorAll(".grid img");
-
-
-const viewer =
-document.getElementById("viewer");
-
-
-const big =
-document.getElementById("bigImage");
-
-
-
-imgs.forEach(img=>{
-
-
-img.onclick=function(){
-
-
-viewer.style.display="flex";
-
-
-big.src=this.src;
-
-
-}
-
-
-});
-
-
-
-viewer.onclick=function(){
-
-
-viewer.style.display="none";
 
 
 }

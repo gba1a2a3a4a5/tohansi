@@ -2,10 +2,11 @@
 <html lang="zh-CN">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Illustration Gallery</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Gallery</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -15,70 +16,49 @@
 <body>
 
 
-<!-- 入口界面 -->
+<!-- 第一页面：年龄确认 -->
 
-<section id="welcome" class="screen">
-
-    <div class="card">
-
-        <h1>Illustration</h1>
-
-        <p>
-        请确认你的年龄是否已满18岁
-        </p>
+<div id="agePage" class="page">
 
 
-        <div class="buttons">
-
-            <button id="yes">
-                是
-            </button>
-
-            <button id="no">
-                否
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
+<div class="box">
 
 
-
-<!-- 加载界面 -->
-
-<section id="loading" class="screen hidden">
-
-
-    <div class="loading-box">
-
-        <h2>
-        正在为你寻找与你年龄相适配的内容……
-        </h2>
+<h1>
+请确认你的年龄是否已满18岁
+</h1>
 
 
-        <div class="loader"></div>
+<div>
+
+<button id="adult">
+是</button>
 
 
-        <p id="loadingText">
-        正在搜索插画资源...
-        </p>
+<button id="child">
+否</button>
 
 
-    </div>
+</div>
 
 
-</section>
+</div>
+
+
+</div>
 
 
 
-<!-- 禁止访问 -->
-
-<section id="blocked" class="screen hidden">
 
 
-<div class="card">
+<!-- 第二页面：禁止访问 -->
+
+
+<div id="blockedPage" class="page hide">
+
+
+<div class="box">
+
 
 <h1>
 访问限制
@@ -90,21 +70,57 @@
 </p>
 
 
-<button onclick="location.reload()">
-返回
-</button>
+</div>
 
 
 </div>
 
 
-</section>
 
 
 
-<!-- 图片展示 -->
 
-<main id="gallery" class="hidden">
+<!-- 第三页面：加载 -->
+
+<div id="loadingPage" class="page hide">
+
+
+<div class="box">
+
+
+<h2>
+正在为你寻找与你年龄相适配的内容……
+</h2>
+
+
+<div class="progress">
+
+
+<div></div>
+
+
+</div>
+
+
+<p id="loadingText">
+正在搜索...
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- 第四页面：插画 -->
+
+<div id="galleryPage" class="hide galleryPage">
 
 
 <h1>
@@ -112,7 +128,8 @@ Illustration Gallery
 </h1>
 
 
-<div class="grid">
+
+<div class="gallery">
 
 
 <img src="images/1.jpg">
@@ -120,10 +137,12 @@ Illustration Gallery
 <img src="images/3.jpg">
 <img src="images/4.jpg">
 
+
 <img src="images/5.jpg">
 <img src="images/6.jpg">
 <img src="images/7.jpg">
 <img src="images/8.jpg">
+
 
 <img src="images/9.jpg">
 <img src="images/10.jpg">
@@ -132,17 +151,8 @@ Illustration Gallery
 </div>
 
 
-</main>
-
-
-
-<!-- 图片放大 -->
-
-<div id="viewer">
-
-<img id="bigImage">
-
 </div>
+
 
 
 
