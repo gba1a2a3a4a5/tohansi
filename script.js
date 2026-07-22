@@ -116,3 +116,62 @@ galleryPage.classList.remove("hide");
 
 
 }
+
+// =================
+// 图片点击预览
+// =================
+
+
+const images =
+document.querySelectorAll(".gallery img");
+
+
+const preview =
+document.getElementById("preview");
+
+
+const previewImage =
+document.getElementById("previewImage");
+
+
+
+
+
+images.forEach(image=>{
+
+
+image.onclick=function(){
+
+
+preview.style.display="flex";
+
+
+previewImage.src=this.src;
+
+
+
+}
+
+
+});
+
+
+
+
+
+// 点击黑色背景关闭
+
+
+preview.onclick=function(e){
+
+
+if(e.target!==previewImage){
+
+
+preview.style.display="none";
+
+
+}
+
+
+}
