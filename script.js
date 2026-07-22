@@ -175,3 +175,35 @@ preview.style.display="none";
 
 
 }
+
+
+// 图片加载动画
+
+const galleryImages =
+document.querySelectorAll(".image-card img");
+
+
+galleryImages.forEach(img=>{
+
+
+// 如果图片已经缓存
+
+if(img.complete){
+
+img.classList.add("loaded");
+
+}
+
+
+
+// 等待加载完成
+
+img.onload=function(){
+
+img.classList.add("loaded");
+
+
+}
+
+
+});
