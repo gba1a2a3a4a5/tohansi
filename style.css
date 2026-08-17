@@ -313,7 +313,8 @@ background-position:
 
 
 
-.image-card img{
+.image-card img,
+.image-card video{
 
 
 width:100%;
@@ -343,7 +344,8 @@ transform .6s ease;
 
 
 
-.image-card img.loaded{
+.image-card img.loaded,
+.image-card video.loaded{
 
 
 opacity:1;
@@ -357,9 +359,14 @@ scale(1);
 
 
 
-.image-card img.loaded
-+
-.skeleton{
+.image-card img.loaded + .skeleton,
+.image-card video.loaded + .skeleton{
+opacity:0;
+}
+
+/* 占位层在媒体前面，所以加载完成后由 JS 给卡片添加状态 */
+.image-card:has(img.loaded) .skeleton,
+.image-card:has(video.loaded) .skeleton{
 
 
 opacity:0;
@@ -474,7 +481,21 @@ repeat(2,1fr);
 
 }
 
-/* 图片预览 */
+/* 图片 / 视频预览 */
+
+#previewImage,
+#previewVideo{
+
+display:none;
+
+}
+
+#previewImage.show,
+#previewVideo.show{
+
+display:block;
+
+}
 
 #preview{
 
@@ -520,7 +541,8 @@ fade .3s;
 
 
 
-#preview img{
+#preview img,
+#preview video{
 
 
 max-width:90%;
